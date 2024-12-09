@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats de {{ participant }}</title>
 </head>
 <body>
-$END$
+<h1>Résultats de {{ participant }}</h1>
+<p>Cadeau humoristique : {{ bêtise }}</p>
+<p>Cadeau sérieux : {{ sérieux }}</p>
+<a href="{{ url_for('index') }}">Retour à la liste</a>
 </body>
 </html>

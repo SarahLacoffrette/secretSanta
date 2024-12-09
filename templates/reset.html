@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réinitialisation</title>
 </head>
 <body>
-$END$
+<h1>Réinitialiser les résultats</h1>
+<form method="POST">
+    <label for="password">Mot de passe :</label>
+    <input type="password" name="password" id="password" required>
+    <button type="submit">Réinitialiser</button>
+</form>
+<a href="{{ url_for('index') }}">Retour à l'accueil</a>
 </body>
 </html>

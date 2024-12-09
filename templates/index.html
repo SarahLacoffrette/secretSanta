@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Santa - Participants</title>
 </head>
 <body>
-$END$
+<h1>Secret Santa - Tirages</h1>
+<ul>
+    {% for participant in participants %}
+    <li>
+        {% if participant in results %}
+        {{ participant }} a déjà tiré : Bêtise = {{ results[participant]['bêtise'] }}, Sérieux = {{ results[participant]['sérieux'] }}
+        {% else %}
+        <!-- Lien vers les résultats pour ce participant -->
+        <a href="{{ url_for('results', participant=participant) }}">
+            <button>{{ participant }}</button>
+        </a>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+<hr>
+<!-- Bouton distinct pour réinitialiser -->
+<form action="{{ url_for('reset') }}" method="GET" style="margin-top: 20px;">
+    <button type="submit">Réinitialiser les résultats</button>
+</form>
 </body>
 </html>
